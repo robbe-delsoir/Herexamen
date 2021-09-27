@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dice la baguette up!</string>
+    <string name="imgdicecontent"/>
+    <string name="btnrolldice">roll la baguette</string>
+    <string-array name="toastText">
+        <item>Merde</item>
+        <item>croissant</item>
+        <item>Catastrofe</item>
+    </string-array>
+
+</resources>

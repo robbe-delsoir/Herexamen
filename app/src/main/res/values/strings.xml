@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dice em up!</string>
+    <string name="imgdicecontent"/>
+    <string name="btnrolldice">roll the dice</string>
+    <string name="btndeletedice">delete all dice</string>
+    <string-array name="toastText">
+        <item>You forgot to blow on it.</item>
+        <item>May the odds be in your favor.</item>
+    </string-array>
+
+</resources>
