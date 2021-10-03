@@ -42,11 +42,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun rollDice(){
 
         var dice = Random.nextInt(6) +1
+        var dice2 = Random.nextInt(6) +1
+        var dice3 = Random.nextInt(6) +1
+        var dice4 = Random.nextInt(6) +1
 
-        var result = when (dice) {
+        var result1 = when (dice) {
             //case 1:
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
@@ -55,10 +59,38 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        this.diceImageView.setImageResource(result)
-        this.diceImageView2.setImageResource(result)
-        this.diceImageView3.setImageResource(result)
-        this.diceImageView4.setImageResource(result)
+        var result2 = when (dice2) {
+            //case 1:
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        var result3 = when (dice3) {
+            //case 1:
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        var result4 = when (dice4) {
+            //case 1:
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        this.diceImageView.setImageResource(result1)
+        this.diceImageView2.setImageResource(result2)
+        this.diceImageView3.setImageResource(result3)
+        this.diceImageView4.setImageResource(result4)
     }
 
 

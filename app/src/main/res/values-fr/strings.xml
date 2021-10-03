@@ -3,6 +3,7 @@
     <string name="app_name">Dice la baguette up!</string>
     <string name="imgdicecontent"/>
     <string name="btnrolldice">roll la baguette</string>
+    <string name="btndeletedice">delete all dice!</string>
     <string-array name="toastText">
         <item>Merde</item>
         <item>croissant</item>
