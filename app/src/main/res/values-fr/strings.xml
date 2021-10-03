@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Dice la baguette up!</string>
+    <string name="app_name">les couper en dés!</string>
     <string name="imgdicecontent"/>
-    <string name="btnrolldice">roll la baguette</string>
-    <string name="btndeletedice">delete all dice!</string>
+    <string name="btnrolldice">lancer les dés</string>
+    <string name="btndeletedice">supprimer</string>
     <string-array name="toastText">
-        <item>Merde</item>
-        <item>croissant</item>
-        <item>Catastrofe</item>
+        <item>Tu as oublié de souffler dessus.</item>
+        <item>Que la chance soit avec toi.</item>
     </string-array>
 
 </resources>
