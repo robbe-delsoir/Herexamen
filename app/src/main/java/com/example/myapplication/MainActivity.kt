@@ -5,23 +5,32 @@ import android.util.Log
 import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.StringBuilder
+import java.util.concurrent.TimeUnit
 
 const val Base_Url = "https://min-api.cryptocompare.com/"
 class MainActivity : AppCompatActivity() {
 
 
     private lateinit var txtId: TextView
+    private lateinit var okHttpClient: OkHttpClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getMyData();
+
+        okHttpClient = OkHttpClient.Builder()
+            .readTimeout(15, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .build()
+
+        getMyData()
 
         txtId = findViewById(R.id.txtId)
 
@@ -31,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun getMyData() {
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
             .baseUrl(Base_Url)
             .build()
             .create(ApiInterface::class.java)
@@ -52,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
 
             override fun onFailure(call: Call<MyData?>, t: Throwable) {
-                Log.d("MainActivity", "onFailure: "+t.message)
+                Log.i("Error", "onFailure: "+t.message)
 
             }
         })
