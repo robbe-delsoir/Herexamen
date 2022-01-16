@@ -6,85 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageDices"
-        android:layout_width="181dp"
-        android:layout_height="216dp"
-        android:contentDescription="@string/imgdicecontent"
-        app:layout_constraintBottom_toTopOf="@+id/imageDices4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toEndOf="@+id/imageDices2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_dice" />
-
-    <Button
-        android:id="@+id/btnrolldice"
+    <TextView
+        android:id="@+id/txtId"
+        android:text="Hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:text="@string/btnrolldice"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="398dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageDices2"
-        android:layout_width="175dp"
-        android:layout_height="218dp"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="@string/imgdicecontent"
-        app:layout_constraintBottom_toTopOf="@+id/imageDices3"
-        app:layout_constraintEnd_toStartOf="@+id/imageDices"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_dice" />
-
-    <ImageView
-        android:id="@+id/imageDices3"
-        android:layout_width="167dp"
-        android:layout_height="211dp"
-        android:layout_marginBottom="120dp"
-        android:contentDescription="@string/imgdicecontent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageDices4"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/empty_dice" />
-
-    <ImageView
-        android:id="@+id/imageDices4"
-        android:layout_width="177dp"
-        android:layout_height="215dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="120dp"
-        android:contentDescription="@string/imgdicecontent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/empty_dice" />
-
-    <Button
-        android:id="@+id/btndeletedice"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="249dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="26dp"
-        android:background="@android:color/holo_red_light"
-        android:backgroundTint="#FF0E0E"
-        android:backgroundTintMode="add"
-        android:contentDescription="@string/btndeletedice"
-        android:text="@string/btndeletedice"
-        android:textColor="@android:color/holo_red_dark"
-        app:iconTint="#F40000"
-        app:layout_constraintBottom_toTopOf="@+id/imageDices"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:rippleColor="@android:color/holo_red_dark"
-        app:strokeColor="#FF0000" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,104 +1,61 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
+import android.util.Log
+import android.widget.TextView
+
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.random.Random
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.StringBuilder
 
+const val Base_Url = "https://min-api.cryptocompare.com/"
 class MainActivity : AppCompatActivity() {
-    private lateinit var rollButton: Button
-    private lateinit var deleteButton: Button
-    private lateinit var diceImageView: ImageView
-    private lateinit var diceImageView2: ImageView
-    private lateinit var diceImageView3: ImageView
-    private lateinit var diceImageView4: ImageView
 
+
+    private lateinit var txtId: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getMyData();
 
-        this.diceImageView = findViewById(R.id.imageDices)
-        this.diceImageView2 = findViewById(R.id.imageDices2)
-        this.diceImageView3 = findViewById(R.id.imageDices3)
-        this.diceImageView4 = findViewById(R.id.imageDices4)
-        this.rollButton = findViewById(R.id.btnrolldice)
-        this.deleteButton = findViewById(R.id.btndeletedice)
+        txtId = findViewById(R.id.txtId)
+
+
     }
 
-    override fun onStart() {
-        super.onStart()
-        this.rollButton.setOnClickListener{
-            var iToasty = Random.nextInt(resources.getStringArray(R.array.toastText).size)
+    private fun getMyData() {
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(Base_Url)
+            .build()
+            .create(ApiInterface::class.java)
 
-            Toast.makeText(this, resources.getStringArray(R.array.toastText)[iToasty], Toast.LENGTH_SHORT).show()
+        val retrofitData = retrofitBuilder.getData()
 
-            rollDice()
-        }
-        this.deleteButton.setOnClickListener{
-            deleteAllDice()
-        }
-    }
+        retrofitData.enqueue(object : Callback<MyData?> {
+            override fun onResponse(call: Call<MyData?>, response: Response<MyData?>) {
 
+                val responseBody = response.body()
+                val myStringBuilder = StringBuilder()
+                if (responseBody != null) {
+                    myStringBuilder.append(responseBody.BTC)
+                }
 
-    private fun rollDice(){
+                txtId.text = myStringBuilder
 
-        var dice = Random.nextInt(6) +1
-        var dice2 = Random.nextInt(6) +1
-        var dice3 = Random.nextInt(6) +1
-        var dice4 = Random.nextInt(6) +1
-
-        var result1 = when (dice) {
-            //case 1:
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        var result2 = when (dice2) {
-            //case 1:
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        var result3 = when (dice3) {
-            //case 1:
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        var result4 = when (dice4) {
-            //case 1:
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-
-        this.diceImageView.setImageResource(result1)
-        this.diceImageView2.setImageResource(result2)
-        this.diceImageView3.setImageResource(result3)
-        this.diceImageView4.setImageResource(result4)
-    }
+            }
 
 
-    private fun deleteAllDice(){
-        this.diceImageView.setImageResource(R.drawable.empty_dice)
-        this.diceImageView2.setImageResource(R.drawable.empty_dice)
-        this.diceImageView3.setImageResource(R.drawable.empty_dice)
-        this.diceImageView4.setImageResource(R.drawable.empty_dice)
+            override fun onFailure(call: Call<MyData?>, t: Throwable) {
+                Log.d("MainActivity", "onFailure: "+t.message)
+
+            }
+        })
     }
 
 }
