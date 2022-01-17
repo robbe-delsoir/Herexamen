@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.myapplication.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,10 +23,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var txtEUR: TextView
     private lateinit var txtUSD: TextView
 
+    lateinit var binding : ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getMyData();
+        //dit is een manier van databinding om findviewbyid weg te werken
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding.txtInfo.text="Ethereum"
+
+        val datForBinding=DatForBinding("About")
+        binding.infoData=datForBinding
+
+
+        getMyData()
 
         val secondActButton = findViewById<Button>(R.id.buttonAbout)
         secondActButton.setOnClickListener{
@@ -65,14 +78,14 @@ class MainActivity : AppCompatActivity() {
                 val myStringBuilder2 = StringBuilder()
                 if (responseBody != null) {
                     if (responseBodyTwo != null) {
-                        myStringBuilder.append(responseBodyTwo.EUR)
+                        myStringBuilder2.append(responseBodyTwo.EUR)
                     }
                 }
 
                 val myStringBuilder3 = StringBuilder()
                 if (responseBody != null) {
                     if (responseBodyThree != null) {
-                        myStringBuilder.append(responseBodyThree.USD)
+                        myStringBuilder3.append(responseBodyThree.USD)
                     }
                 }
 

@@ -8,5 +8,6 @@ class activity_about : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.about)
+
     }
 }
