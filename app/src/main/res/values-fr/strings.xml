@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">les couper en dés!</string>
-    <string name="imgdicecontent"/>
-    <string name="btnrolldice">lancer les dés</string>
-    <string name="btndeletedice">supprimer</string>
-    <string-array name="toastText">
-        <item>Tu as oublié de souffler dessus.</item>
-        <item>Que la chance soit avec toi.</item>
-    </string-array>
+    <string name="note">Les prix pourraient être un peu différents</string>
+    <string name="app_name">Prix Ethereum</string>
+    <string name="Info">Ethereum est une blockchain décentralisée et open source avec une fonctionnalité de contrat intelligent. Ether (ETH ou Ξ) est la crypto-monnaie native de la plateforme. Parmi les crypto-monnaies, Ether est le deuxième derrière Bitcoin en termes de capitalisation boursière.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">sur</string>
+    <string name="ethereum">Ethereum</string>
 
 </resources>

@@ -7,4 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ethereum_light">#8b93b4</color>
+    <color name="ethereum_dark">#626890</color>
 </resources>

@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">Dice em up!</string>
-    <string name="imgdicecontent"/>
-    <string name="btnrolldice">roll the dice</string>
-    <string name="btndeletedice">delete all dice</string>
-    <string-array name="toastText">
-        <item>You forgot to blow on it.</item>
-        <item>May the odds be in your favor.</item>
-    </string-array>
+
+    <string name="note">The prices could be a little bit different</string>
+    <string name="app_name">Ethereum price</string>
+    <string name="Info">Ethereum is a decentralized, open-source blockchain with smart contract functionality. Ether (ETH or Ξ) is the native cryptocurrency of the platform. Amongst cryptocurrencies, Ether is second only to Bitcoin in market capitalization.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">About</string>
+    <string name="ethereum">Ethereum</string>
 
 </resources>
